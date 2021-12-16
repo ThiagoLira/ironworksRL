@@ -1,4 +1,6 @@
 #include "Dummy.cpp"
+#include <iostream>
+
 
 class GreedyAgent  
 {   
@@ -6,8 +8,14 @@ class GreedyAgent
     public:
         GreedyAgent(){
         }
-        // ALWAYS PUNCH
+        // ALWAYS PUNCH WHEN CHARGE IS AT 5
+        // THIS IS THE OPTIMAL STRATEGY FOR DUMMY
         int ChoseAction(Dummy dummy){
-            return dummy.PUNCH;
+            if (dummy.getState() == 5){
+                return dummy.PUNCH;
+            }
+            else{
+                return dummy.NONE;
+            }
         }
 };
